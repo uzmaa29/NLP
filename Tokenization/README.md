@@ -4,7 +4,7 @@ A simple NLP notebook demonstrating text tokenization using Python and NLTK.
 
 ## overview
 
-This notebook introduces tokenization, the process of breaking text into smaller units called tokens. It includes examples of word tokenization and sentence tokenization.
+This notebook introduces tokenization, the process of breaking text into smaller units called tokens. It includes examples of word tokenization, sentence tokenization, and Tokem Frequency counter
 
 ## tech stack
 
