@@ -1,8 +1,20 @@
 # POS Tagging
 
-a simple NLP notebook demonstrating Part-of-Speech (POS) tagging using Python and NLTK.
-POS tagging, the process of assigning grammatical labels to words in a sentence. this notebook demonstrates how words such as nouns, verbs, adjectives, and adverbs can be identified using NLTK.
+A collection of notebooks demonstrating Part-of-Speech (POS) tagging techniques using Python and Natural Language Processing (NLP) libraries.
+
+This repository introduces Part-of-Speech (POS) tagging, the process of assigning grammatical labels to words in a sentence. It includes both traditional POS tagging methods and an introductory neural network-based approach.
+
+## Notebooks
+
+* **POS Tagging** – Demonstrates POS tagging using NLTK.
+* **POS via Neural Networks** – Introduces a neural network-based approach to POS tagging.
+
+## Tags
+
+* Word Tokenization
+* Part-of-Speech (POS) Tagging
+* POS Tag Interpretation
+* Neural Network-based POS Tagging
 
 ## Note
-
-this notebook was created for learning and practicing the fundamentals of Natural Language Processing (NLP).
+These notebooks were created for learning and practicing the fundamentals of Part-of-Speech tagging in Natural Language Processing (NLP).
