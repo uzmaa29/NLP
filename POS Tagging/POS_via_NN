@@ -1,0 +1,196 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "akmHnbt_OVHb"
+      },
+      "outputs": [],
+      "source": [
+        "import nltk\n",
+        "from nltk.tokenize import word_tokenize\n",
+        "from collections import Counter"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nltk.download('punkt')\n",
+        "nltk.download('punkt_tab')\n",
+        "nltk.download('averaged_perceptron_tagger_eng')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Oi34n6PYO9Jz",
+        "outputId": "a195deb7-2d70-4380-da49-c367ed815b65"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "[nltk_data] Downloading package punkt to /root/nltk_data...\n",
+            "[nltk_data]   Package punkt is already up-to-date!\n",
+            "[nltk_data] Downloading package punkt_tab to /root/nltk_data...\n",
+            "[nltk_data]   Unzipping tokenizers/punkt_tab.zip.\n",
+            "[nltk_data] Downloading package averaged_perceptron_tagger_eng to\n",
+            "[nltk_data]     /root/nltk_data...\n",
+            "[nltk_data]   Package averaged_perceptron_tagger_eng is already up-to-\n",
+            "[nltk_data]       date!\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 9
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "text = input(\"Enter a Sentence\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FlVzhGmkPH8j",
+        "outputId": "5279485f-33a5-4765-f51c-22f727afe2a6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Enter a SentenceHey! Where have you been?\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tokens = word_tokenize(text)"
+      ],
+      "metadata": {
+        "id": "Ianv1gj0PLFP"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pos_tags = nltk.pos_tag(tokens)"
+      ],
+      "metadata": {
+        "id": "CRrcyKZKPOER"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"POS Tags:\")\n",
+        "print(pos_tags)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5U41EgO6PRJX",
+        "outputId": "505fece8-cd0a-4a99-a6fb-871098682fef"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "POS Tags:\n",
+            "[('Hey', 'NN'), ('!', '.'), ('Where', 'WRB'), ('have', 'VBP'), ('you', 'PRP'), ('been', 'VBN'), ('?', '.')]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tags = [tag for word, tag in pos_tags]\n",
+        "tag_counts = Counter(tags)"
+      ],
+      "metadata": {
+        "id": "1c6UBnNVPZD8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"\\nCount of POS Tags:\")\n",
+        "for tag, count in tag_counts.items():\n",
+        "  print(f\"{tag} : {count}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Exg8glrLPhWp",
+        "outputId": "2837477f-8760-4736-ceca-13384db2ce00"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "Count of POS Tags:\n",
+            "NN : 1\n",
+            ". : 2\n",
+            "WRB : 1\n",
+            "VBP : 1\n",
+            "PRP : 1\n",
+            "VBN : 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "BKlVUHZQPxth"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
